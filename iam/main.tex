@@ -57,3 +57,24 @@ JSON document that defines the access level of AWS services and resources. Examp
 \includegraphics[scale=0.5]{iam/iam}
 \centering
 \end{figure}
+
+\subsection{Access AWS}
+\begin{itemize}
+	\item{\textbf{Management Console:}} Web portal. Protected by password + MFA (Optional, but recomended)
+	\item{\textbf{CLI:}} Command Line tool. Protected by access keys.
+	\item{\textbf{SDK:}} Code library. Protected by access keys.
+\end{itemize}
+
+\subsection{IAM Security Tools}
+\begin{itemize}
+	\item{\textbf{IAM Credentials Report:}} Account level tool that lists all users and the status of their credentials.
+\item{\textbf{IAM Access Advisor:}} User level tool. List of all permisions (policies) per service and when it was last accessed.
+\end{itemize}
+
+\subsection{IAM Share responsibility model}
+\begin{itemize}
+	\item{Management and monitoring of users, groups, roles and policies}
+	\item{Enable MFA on all accounts}
+	\item{Rotate all the keys often}
+	\item{Analyze access patterns \& review permissions}
+\end{itemize}
