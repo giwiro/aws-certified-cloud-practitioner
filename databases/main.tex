@@ -1,0 +1,28 @@
+\section{Databases}
+
+\subsection{RDS}
+Relational Database Service (RDS) is a \textbf{managed DB service} that handles: PostgreSQL, MySQL, MariaDB, Oracle, Microsoft SQL Server, Aurora (AWS propietary databse). It's great for OLTP (On-Line Transaction Processing).
+
+\subsubsection{Aurora:}
+Cloud Optimized DB (5x better) and compatible with PostgreSQL and MySQL, but it's more expensive (20\% more). It automatically grows in increments of 10GB (up to 64TB).
+
+\subsection{ElastiCache}
+Managed Redis or Memcached dabases. \textbf{In-memory key-value dabases} with high performance. Great for caching Real heavy queries.
+
+\subsection{DynamoDB}
+\textbf{Fully Managed, serverless}, key-value, high-available (replication 3 AZ) database with \textbf{single, digit millisecond latency}.
+
+\subsection{Redshift}
+\textbf{Columnar} database, based on PostgreSQL and has a SQL interface for performing queries. It's great for  OLAP (On-Line Analytical Processing).
+
+\subsection{EMR}
+Elastic Map Reduce helps you create a \textbf{Hadoop cluster}. It supports Apache Spark, HBase, Presto, Flink ... It's great for data processing, machine learning, indexing websites, big data...
+
+\subsection{Athena}
+Fully \textbf{serverless database} with \textbf{SQL capabilities}. It is used to query data in S3.
+
+\subsection{DMS}
+Database Migration Service (DMS), quickly and securely \textbf{migrates databases to AWS}.
+
+\subsection{Glue}
+Is a \textbf{fully serverless} \textbf{ETL (Extract Transform Load)} service
