@@ -1,0 +1,24 @@
+\section{Other Compute Services}
+
+\subsection{ECS}
+Elastic Container Service (ECS) enables the \textbf{launch of Docker containers} but \textbf{you must provision \& maintain the infrastructure (EC2 instances)}.
+AWS takes care of starting and stopping containers and has integration with \textbf{ELB (Application)}
+
+\subsection{Fargate}
+Fargate enables the \textbf{launch of Docker containers} and \textbf{you do not provision the infrastructure (serverless)}, it is much simpler than ECS.
+
+\subsection{ECR}
+Elastic Container Registry (ECR) is a \textbf{private docker registry} on AWS.
+
+\subsection{AWS Lambda}
+Lambda is a \textbf{serverless} service which runs \textbf{virtual functions} that are limited by time (execution time), runs \textbf{on demand} (\textbf{event-driven}: gets invoked when needed) and can \textbf{scale automatically}.
+The pricing is based on: number of requests, RAM, execution time.
+
+\subsection{AWS Batch}
+\textbf{Fully managed batch processing} at any scale. A batch job will start and end.
+It will \textbf{dynamically launch EC2 instances (can be Spot Instances)} and the actual batch job will be defined as \textbf{Docker images} and \textbf{run on ECS}.
+
+\subsection{AWS LightSail}
+Standalone service which \textbf{provide fully managed virtual servers, storage, databases and networking}.
+It has low cost, \textbf{predictable pricing} and is an alternative instead of using common AWS services (EC2, RDS, ELB, etc). That's why it is great for people with \textbf{little cloud experience}.
+It has \textbf{high availability} but \textbf{NO AUTO-SCALING and limited AWS integration}.
