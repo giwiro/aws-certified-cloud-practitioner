@@ -1,25 +1,29 @@
-\section{IAM}
+\section{IAM}\label{sec:iam}
 
-\subsection{What is}
-IAM (\textbf{Identity and Access Management}) is a \textbf{global} AWS service that helps you manage 
+\subsection{What is}\label{subsec:what-is}
+IAM \textbf{(Identity and Access Management)} is a \textbf{global} AWS service that helps you manage
 the permissions of the access to AWS services and resources.
 
-\subsection{Users, Groups, Roles, Policies}
+\subsection{Users, Groups, Roles, Policies}\label{subsec:users-groups-roles-policies}
 
 \subsubsection{Users}
-People within the organization. One AWS user account per physical user. You can assign policies to a user.
+People within the organization.
+One AWS user account per physical user.
+You can assign policies to a user.
 
 \subsubsection{Groups}
-Can contain users only (not other groups). You can assign policies to a group.
+Can contain users only (not other groups).
+You can assign policies to a group.
 
 \subsubsection{Roles}
 In order to bind a policy to an AWS service or resource (EC2, Lambda, etc), we need to it through a role.
 
 \subsubsection{Policies}
-JSON document that defines the access level of AWS services and resources. Example:
+JSON document that defines the access level of AWS services and resources.
+Example:
 
 
-\begin{lstlisting}[basicstyle=\small]
+\begin{lstlisting}[basicstyle=\small,label={lst:policy}]
 // AmazonEC2ReadOnlyAccess
 {
     "Version": "2012-10-17",
@@ -52,26 +56,31 @@ JSON document that defines the access level of AWS services and resources. Examp
 }
 \end{lstlisting}
 
-\subsection{IAM Elements Relationships}
+\subsection{IAM Elements Relationships}\label{subsec:iam-elements-relationships}
 \begin{figure}[h]
-\includegraphics[scale=0.5]{iam/iam}
-\centering
+    \includegraphics[scale=0.5]{iam/iam}
+    \centering
+    \label{fig:iam-elements-relationships}
 \end{figure}
 
-\subsection{Access AWS}
+\subsection{Access AWS}\label{subsec:access-aws}
 \begin{itemize}
-	\item{\textbf{Management Console:}} Web portal. Protected by password + MFA (Optional, but recomended)
-	\item{\textbf{CLI:}} Command Line tool. Protected by access keys.
-	\item{\textbf{SDK:}} Code library. Protected by access keys.
+	\item{\textbf{Management Console:}} Web portal.
+	    Protected by password + MFA {(Optional, but recommended)}
+	\item{\textbf{CLI:}} Command Line tool.
+        Protected by access keys.
+	\item{\textbf{SDK:}} Code library.
+        Protected by access keys.
 \end{itemize}
 
-\subsection{IAM Security Tools}
+\subsection{IAM Security Tools}\label{subsec:iam-security-tools}
 \begin{itemize}
 	\item{\textbf{IAM Credentials Report:}} Account level tool that lists all users and the status of their credentials.
-\item{\textbf{IAM Access Advisor:}} User level tool. List of all permisions (policies) per service and when it was last accessed.
+    \item{\textbf{IAM Access Advisor:}} User level tool.
+        List of all permissions (policies) per service and when it was last accessed.
 \end{itemize}
 
-\subsection{IAM Share responsibility model}
+\subsection{IAM Share responsibility model}\label{subsec:iam-share-responsibility-model}
 \begin{itemize}
 	\item{Management and monitoring of users, groups, roles and policies}
 	\item{Enable MFA on all accounts}
