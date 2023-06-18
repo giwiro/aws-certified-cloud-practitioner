@@ -1,27 +1,28 @@
-\section{S3}
+\section{S3}\label{sec:s3}
 
-\subsection{What is}
+\subsection{What is}\label{subsec:what-is-s3}
 One of the building blocks of AWS that is advertised as \textbf{infinitely scaling} storage.
 
-\subsection{Anatomy}
-S3 allows people to store \textbf{objects} ("files") in \textbf{buckets}, which must have a \textbf{global unique name} but they are \textbf{defined at region level}.
-All the objects have a \textbf{key} that is the full path to the object, e.g. \textit{s3://my-bucket/my\_file.txt}, and have a \textbf{max size of 5TB}.
+\subsection{Anatomy}\label{subsec:anatomy}
+S3 allows people to store \textbf{objects} ("files") in \textbf{buckets}\, which must have a \textbf{global unique name} but they are \textbf{defined at region level}\.
+All the objects have a \textbf{key} that is the full path to the object, e.g. \textit{s3://my-bucket/my\_file.txt}\, and have a \textbf{max size of 5TB}\.
 
-\subsection{Security}
-\subsubsection{User based:} IAM policies (attached to the user or group that will have access)
+\subsection{Security}\label{subsec:security}
+
+\subsubsection{User based:} IAM policies \(attached to the user or group that will have access\)
 \subsubsection{Resource Based:}
 \begin{itemize}
-	\item \textbf{Bucket Policies:} JSON based rules (Same as IAM Policy - allow complex rules)
+	\item \textbf{Bucket Policies:} JSON based rules \(Same as IAM Policy - allow complex rules\)
 	\item \textbf{Object Access Control List (ACL):} Simple rules (ALLOW/DENY) over single object, finer-grain control.
 	\item \textbf{Bucket Access Control List (ACL):} Simple rules over the whole bucket.
 \end{itemize}
 \subsubsection{Encryption}
 
-\subsection{Websites}
+\subsection{Websites}\label{subsec:websites}
 S3 can host static websites.
 The website URL will be: <bucket-name>.s3-website-<aws-region>.amazonaws.com
 
-\subsection{Versioning}
+\subsection{Versioning}\label{subsec:versioning}
 The S3 versioning is enabled at \textbf{bucket level} and it keeps versions of all the objects in S3 when they are changed.
 Why use versioning?
 \begin{itemize}
@@ -29,11 +30,12 @@ Why use versioning?
 	\item{Easy roll back}
 \end{itemize}
 
-\subsection{Access Log}
-Ability to \textbf{log all access} to S3 buckets (maybe for auditing purposes), e.g. any request made to S3, authorized or denied.
+\subsection{Access Log}\label{subsec:access-log}
+Ability to \textbf{log all access} to S3 buckets (maybe for auditing purposes), e.g\. any request made to S3, authorized or denied.
 
-\subsection{Replication: CRR \& SRR}
-Allow to duplicate in real time an S3 bucket. In order to achieve that you \textbf{must enable versioning} in source and destination.
+\subsection{Replication: CRR \&SRR}\label{subsec:replication-crr-srr}
+Allow to duplicate in real time an S3 bucket.
+In order to achieve that you \textbf{must enable versioning} in source and destination.
 \subsubsection{CRR use cases}
 \begin{itemize}
 	\item{Compliance (high available buckets in case of disaster}
@@ -46,7 +48,7 @@ Allow to duplicate in real time an S3 bucket. In order to achieve that you \text
 	\item{Live replication from production to test account}
 \end{itemize}
 
-\subsection{Storage Classes}
+\subsection{Storage Classes}\label{subsec:storage-classes}
 S3 has \textbf{High durability (99.999999999\%)} for all storage classes.
 
 \begin{itemize}
@@ -67,7 +69,7 @@ S3 has \textbf{High durability (99.999999999\%)} for all storage classes.
 	\end{itemize}
 \end{itemize}
 
-\subsection{Shared Responsibility Model}
+\subsection{Shared Responsibility Model}\label{subsec:shared-responsibility-model}
 \begin{itemize}
 	\item{S3 Versioning.}
 	\item{S3 Bucket Policies.}
@@ -77,13 +79,16 @@ S3 has \textbf{High durability (99.999999999\%)} for all storage classes.
 	\item{Data encryption at rest and in transit.}
 \end{itemize}
 
-\subsection{Snowball, Snowball Edge, Snowmobile}
-All three services use physical data transportation that helps moving great amount of data in or out of AWS. You pay per data transfer job.
+\subsection{Snowball, Snowball Edge, Snowmobile}\label{subsec:snowball-snowball-edge-snowmobile}
+All three services use physical data transportation that helps to move great amount of data in or out of AWS. You pay per data transfer job.
 
 \subsubsection{Snowball:} Can be used to large data cloud migration, disaster recovery.
-\subsubsection{Snowball Edge:} 100TB capacity and has computational capability (can process data on the go). It supports EC2 AMI and Lambda functions.
-\subsubsection{Snowmobile:} Transfer exabytes of data. Best solution if you gonna transfer more than 10PB.
+\subsubsection{Snowball Edge:} 100TB capacity and has computational capability (can process data on the go).
+It supports EC2 AMI and Lambda functions.
+\subsubsection{Snowmobile:} Transfer exabytes of data.
+Best solution if you're going to transfer more than 10PB\.
 
-\subsection{Storage Gateway}
-S3 can be used as a \textit{"hybrid cloud"} set up. This means part of you infrastructure is on-premise and part of it is on the cloud.
+\subsection{Storage Gateway}\label{subsec:storage-gateway}
+S3 can be used as a \textit{"hybrid cloud"} set up.
+This means part of you infrastructure is on-premise and part of it is on the cloud.
 This allows the on-premise storage to seamlessly use the AWS Cloud.

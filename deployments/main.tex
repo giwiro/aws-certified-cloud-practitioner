@@ -1,0 +1,49 @@
+\section{Deployments and managing infrastructure at scale}\label{sec:deployments-and-managing-infrastructure-at-scale}
+
+\subsection{Cloudformation}\label{subsec:cloudformation}
+\textbf{Infrastructure as code} (json or yaml) that directly represents the resources you want to add, supports almost all AWS services.
+
+\subsection{CDK}\label{subsec:cdk}
+Cloud Development Kit (CDK) is an \textbf{Infrastructure as Code} (js/ts, python, java, .net) that is generates cloudformation json/yaml, and deploys it.
+
+\subsection{Elastic BeanStalk}\label{subsec:beanstalk}
+\textbf{Platform as a Service} (PaaS) [Similar to \href{https://www.heroku.com}{Heroku}] managed service, it handles: Instance \& OS configuration.
+It supports many platforms (go, java, java + tomcat, .net, nodejs, php, ruby, docker, etc).
+
+\subsection{CodeDeploy}\label{subsec:codedeploy}
+\textbf{Deploys and upgrades applications} onto servers.
+It uses a codedeploy-agent.
+
+\subsection{CodeCommit}\label{subsec:codecommit}
+\textbf{Source-control} git-based repository.
+
+\subsection{CodeBuild}\label{subsec:codebuild}
+\textbf{Compiles source code, run tests and product artifacts} to be deployed.
+
+\subsection{CodePipeline}\label{subsec:codepipeline}
+\textbf{Orchestrate} the different steps to publish code to production (CI/CD).\newline
+Code \rightarrow Build \rightarrow Test \rightarrow Provision \rightarrow Deploy
+
+\subsection{CodeArtifact}\label{subsec:codeartifact}
+\textbf{Storage for artifacts} \(software dependencies\)\.
+Works with common dependencies manager \(npm, yarn, maven, twine, pip, etc\)\.
+
+\subsection{CodeStar}\label{subsec:codestar}
+\textbf{Unified view for developers to do CI/CD} and code in one place.
+It automatically creates and manages CodeCommit + CodeBuild + CodeDeploy + CodePipeline + EC2 + Beanstalk.
+
+\subsection{Cloud9}\label{subsec:cloud9}
+\textbf{Cloud IDE} in the web browser.
+It allows pair programming (real-time).
+
+\subsection{SSM}\label{subsec:ssm}
+AWS System Manager (SSM) \textbf{patch, configure and run commands at scale} in EC2 \& On-Premise.
+It also \textbf{gets operational insight} of the infrastructure.
+It uses ssm-agent.
+
+\subsubsection{SSM Session Manager}
+Allows to start a secure shell on your EC2 and on-premise servers.
+
+\subsection{OpWorks}\label{subsec:opworks}
+\textbf{Managed \href{https://www.chef.io/}{Chef} and \href{https://www.puppet.com/}{Puppet}}.
+It allows you performs resource provisioning and ongoing future server configurations.
