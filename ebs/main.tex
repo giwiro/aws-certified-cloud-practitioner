@@ -21,10 +21,11 @@ You can launch EC2 instances from:
 	\end{itemize}
 
 \subsection{EC2 Instance Store}\label{subsec:ec2-instance-store}
-\textbf{Ephemeral storage} (Data is lost upon restart) that is located in the same physical location of the EC2 instance and provides a \textbf{better I/O performance}. It's good for buffering and caching but it's \textbf{more expensive}.
+\textbf{Ephemeral storage} (Data is lost upon deletion) that is located in the same physical location of the EC2 instance and provides a \textbf{better I/O performance}. It's good for buffering and caching but it's \textbf{more expensive}.
 
 \subsection{EFS}\label{subsec:efs}
-Managed NFS (network file system) that \textbf{can be bond to multiple EC2 across multiple AZ}. It is \textbf{HA, scalable and very expensive}.
+Managed NFS (network file system) that \textbf{can be bonded to multiple EC2 across multiple AZ}.
+It is \textbf{HA, scalable and very expensive}.
 
 \subsection{EC2 Storage Shared responsibility model}\label{subsec:ec2-storage-shared-responsibility-model}
 \begin{itemize}
