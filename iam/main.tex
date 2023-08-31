@@ -81,9 +81,18 @@ Example:
 \end{itemize}
 
 \subsection{IAM Share responsibility model}\label{subsec:iam-share-responsibility-model}
-\begin{itemize}
-	\item{Management and monitoring of users, groups, roles and policies}
-	\item{Enable MFA on all accounts}
-	\item{Rotate all the keys often}
-	\item{Analyze access patterns \& review permissions}
-\end{itemize}
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{||c c||}
+        \hline
+        \multicolumn{1}{||c|}{\textbf{AWS}}                                & \textbf{You} \\ \hline
+        \multicolumn{1}{||c|}{Infrastructure (global network security)}    & Management and monitoring of users, groups, roles and policies \\ \hline
+        \multicolumn{1}{||c|}{Configuration and vulnerability analysis}    & Rotate all the keys often \\ \hline
+        \multicolumn{1}{||c|}{Compliance validation}                       & Analyze access patterns \& review permissions \\ \hline
+    \end{tabular}
+    \newline\newline
+    \label{tab:iam-share-responsibility-model-table}
+\end{table}
+

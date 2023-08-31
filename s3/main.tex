@@ -70,16 +70,6 @@ S3 has \textbf{High durability (99.999999999\%)} for all storage classes.
 	\end{itemize}
 \end{itemize}
 
-\subsection{Shared Responsibility Model}\label{subsec:shared-responsibility-model}
-\begin{itemize}
-	\item{S3 Versioning.}
-	\item{S3 Bucket Policies.}
-	\item{S3 Replica setup.}
-	\item{Loggin and Monitoring.}
-	\item{S3 Storage classes.}
-	\item{Data encryption at rest and in transit.}
-\end{itemize}
-
 \subsection{Snowball, Snowball Edge, Snowmobile}\label{subsec:snowball-snowball-edge-snowmobile}
 All three services use physical data transportation that helps to move great amount of data in or out of AWS. You pay per data transfer job.
 
@@ -93,3 +83,22 @@ Best solution if you're going to transfer more than 10PB\@.
 S3 can be used as a \textit{"hybrid cloud"} set up.
 This means part of you infrastructure is on-premise and part of it is on the cloud.
 This allows the on-premise storage to seamlessly use the AWS Cloud.
+
+\pagebreak
+
+\subsection{Shared Responsibility Model}\label{subsec:shared-responsibility-model}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{||c c||}
+		\hline
+		\multicolumn{1}{||c|}{\textbf{AWS}}                                						& \textbf{You} \\ \hline
+		\multicolumn{1}{||c|}{Infrastructure (global security, durability, availability.)}    	& S3 Versioning \\ \hline
+		\multicolumn{1}{||c|}{Configuration and vulnerability analysis}    						& S3 Bucket Policies \\ \hline
+		\multicolumn{1}{||c|}{Compliance validation}                    						& Logging and Monitoring \\ \hline
+		\multicolumn{1}{||c|}{}												        			& S3 Storage classes \\ \hline
+		\multicolumn{1}{||c|}{}       															& Data encryption at rest and in transit \\ \hline
+	\end{tabular}
+	\newline\newline
+	\label{tab:shared-responsibility-model-table}
+\end{table}
+

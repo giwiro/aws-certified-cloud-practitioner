@@ -4,7 +4,8 @@
 EC2 (\textbf{Elastic Compute Cloud}) is a IaaS service wich spawns an instance of selected OS. It can be configured with a custom script at start in the \textbf{User Data} option in Step 3 of the creation of an EC2.
 
 \subsection{Security Groups}\label{subsec:security-groups}
-Firewall security rules that control how traffic is allowed in and out the EC2 instance. By default all ports are closed, except for those ports allowed in the security groups.
+Firewall security rules that control how traffic is allowed in and out the EC2 instance.
+By default all ports are closed, except for those ports allowed in the security groups.
 
 \subsection{Connecting to EC2}\label{subsec:connecting-to-ec2}
 \begin{itemize}
@@ -17,20 +18,30 @@ Firewall security rules that control how traffic is allowed in and out the EC2 i
 	\item \textbf{On Demand:} Billing per second, \textbf{highest cost} but no long commitment or upfront payment.
 	\item \textbf{Reserved:} \textbf{75\% discount} but has reservation period commitment of 1 or 3 years (more years more discount).
 	\begin{itemize}
-		\item {Convertible:} Every characteristic of the EC2 (family, instance type, platform, etc) can be changed.
+		\item {Convertible:} Every characteristic of the EC2 (family, instance type, platform, etc.) can be changed.
 		\item {Standard:} Some attributes such as size, chan be changed but only on the existing instance (family, instance type or platform, for instance, cannot be changed).
 	\end{itemize}
 	\item \textbf{Scheduled:} Reservation that recur on a daily, weekly or monthly basis with \textbf{fixed start time and duration} for \textbf{one year term}.
-	\item \textbf{Spot Instances:} \textbf{90\% discount} but \textbf{it can be terminated at any time} (if your max price is bigger than the spotted price)
-	\item \textbf{Dedicated Hosts:} Physical server with EC2 instance capacity dedicated to your use. Helps to address \textbf{compliance requirements} and allow to \textbf{use your existing server-bound software license}. Allocation is a \textbf{3 year commitment} and is more expensive.
+	\item \textbf{Spot Instances:} \textbf{90\% discount}, but \textbf{it can be terminated at any time} (if your max price is bigger than the spotted price)
+	\item \textbf{Dedicated Hosts:} Physical server with EC2 instance capacity dedicated to your use.
+	Helps to address \textbf{compliance requirements} and allow to \textbf{use your existing server-bound software license}.
+	Allocation is a \textbf{3-year commitment} and is more expensive.
 	\item \textbf{Dedicated Instances:} Instances running on \textbf{hardware dedicated to you}.
 \end{itemize}
 
 \subsection{EC2 Shared responsibility model}\label{subsec:ec2-shared-responsibility-model}
-\begin{itemize}
-	\item{Manage Security Groups rules}
-	\item{OS patches \& updates}
-	\item{Software installed in the EC2}
-	\item{IAM Roles assigned to the EC2}
-	\item{Data security on your instance}
-\end{itemize}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{||c c||}
+		\hline
+		\multicolumn{1}{||c|}{\textbf{AWS}}                                & \textbf{You} \\ \hline
+		\multicolumn{1}{||c|}{Infrastructure (global network security)}    & Security Groups rules \\ \hline
+		\multicolumn{1}{||c|}{Isolation on physical hosts}    			   & OS patches and updates \\ \hline
+		\multicolumn{1}{||c|}{Replacing faulty hardware}                   & Software and utilities installed in the EC2 \\ \hline
+		\multicolumn{1}{||c|}{Compliance validation}                       & IAM Roles assigned and access management \\ \hline
+		\multicolumn{1}{||c|}{}                       					   & Data security in the EC2 \\ \hline
+	\end{tabular}
+	\newline\newline
+	\label{tab:ec2-shared-responsibility-model-table}
+\end{table}
